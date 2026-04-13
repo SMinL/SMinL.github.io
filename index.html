@@ -113,6 +113,7 @@
     ========================== */
   /* 1. 修改容器大小：减小宽度，并让高度自适应，这样不会强制拉伸图片 */
   .pub-img {
+    position: relative; /* 必须加这一句，作为标签的定位基准 */
     width: 180px;            /* 从 260px 减小到 180px，更符合学术主页比例 */
     flex-shrink: 0;
     border-radius: 6px;      /* 稍微减小圆角，看起来更硬朗专业 */
@@ -131,7 +132,22 @@
     object-fit: contain;     /* 保持比例缩放，确保整张图都能看见，不会被裁剪 */
     display: block;
   }
-  
+  /* 覆盖在图片上的会议标签 */
+.venue-badge {
+  position: absolute;
+  top: 8px;    /* 距离顶部距离 */
+  right: 8px;  /* 距离右侧距离 */
+  background: rgba(3, 102, 214, 0.9); /* 半透明蓝色，跟你的链接色一致 */
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 10;
+  pointer-events: none; /* 防止遮挡鼠标点击图片 */
+  text-transform: uppercase; /* 强制大写，更有力量感 */
+}
   /* 3. 优化移动端体验：如果屏幕太窄，让图片换行到文字下方 */
   @media (max-width: 600px) {
     .pub {
@@ -419,141 +435,22 @@
     </div>
   </div>
     
-    <h2>Selected Publications</h2>
-      <!-- Featured papers (with figures) -->
-      <div class="pub">
-        <div class="pub-text">
-          <b>
-            <a href="https://link.springer.com/article/10.1007/s00778-025-00912-0" target="_blank">
-              Prompt4Vis: Prompting Large Language Models with Example Mining for Tabular Data Visualization
-            </a>
-          </b><br>
-          <b>Shuaimin Li</b>, Xuanang Chen, Yuanfeng Song, Yunze Song, Chen Jason Zhang, Fei Hao, Lei Chen.<br>
-          <i>The VLDB Journal, 2025, 34(4): 38.</i> (CCF-A)
-        </div>
-        <div class="pub-img">
-          <img src="prompt4vis.png" alt="prompt4vis figure">
-        </div>
-      </div>
-      
-      <div class="pub">
-        <div class="pub-text">
-          <b>
-            <a href="https://arxiv.org/abs/2410.06782v3" target="_blank">
-              VisPoison: An Effective Backdoor Attack Framework for Tabular Data Visualization Models
-            </a>
-          </b><br>
-          <b>Shuaimin Li</b>, Chen Jason Zhang, Xuanang Chen, Anni Peng, Zhuoyue Wan, Yuanfeng Song, Shiwen Ni, Min Yang, Fei Hao, Raymond Chi-Wing Wong.<br>
-          <i>ICDE 2026</i> (CCF-A)
-        </div>
-        <div class="pub-img">
-          <img src="vispoison.png" alt="vispoison figure">
-        </div>
-      </div>
-      
-      <div class="pub">
-        <div class="pub-text">
-          <b>
-            <a href="https://arxiv.org/abs/2511.08317" target="_blank">
-              Automatic Paper Reviewing with Heterogeneous Graph Reasoning over LLM-Simulated Reviewer–Author Debates
-            </a>
-          </b><br>
-          <b>Shuaimin Li*</b>, Liyang Fan*, Yufang Lin*, Zeyang Li, Xian Wei, Shiwen Ni, Hamid Alinejad-Rokny, Min Yang.<br>
-          <i>AAAI 2026</i> (CCF-A)
-        </div>
-        <div class="pub-img">
-          <img src="reviewgraph.png" alt="review figure">
-        </div>
-      </div>
-      
-      <div class="pub">
-        <div class="pub-text">
-          <b>
-              SrDetection: A Self-Referential Framework for Data Leakage Detection in Code Large Language Models
-          </b><br>
-          <b>Shuaimin Li</b>, Liyang Fan, Zeyang li, Zhuoyue WAN, Yufang Lin, Shiwen Ni, Feiteng Fang, Hamid Alinejad-Rokny, Yuanfeng SONG, Kun Jing, Chen Jason Zhang, Min Yang.<br>
-          <i>ACL Findings 2026</i> (CCF-A)
-        </div>
-        <div class="pub-img">
-          <img src="srdetection.png" alt="srdetection figure">
-        </div>
-      </div>
-      
-      <div class="pub">
-        <div class="pub-text">
-          <b>
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0306457323002042" target="_blank">
-              MRC-Sum: An MRC framework for extractive summarization of academic articles
-            </a>
-          </b><br>
-          <b>Shuaimin Li</b>, Jungang Xu.<br>
-          <i>Information Processing & Management, 2023, 60(5): 103467</i> (JCR-Q1)
-        </div>
-        <div class="pub-img">
-          <img src="mrcsum.png" alt="mrcsum figure">
-        </div>
-      </div>
-    
-    <div class="pub">
-      <div class="pub-text">
-        <b>
-          <a href="https://link.springer.com/chapter/10.1007/978-3-031-00129-1_20" target="_blank">
-            KAAS: A keyword-aware attention abstractive summarization model
-          </a>
-        </b><br>
-        <b>Shuaimin Li</b>, Jungang Xu.<br>
-        <i>DASFAA 2022</i> (CCF-B)
-      </div>
-      <div class="pub-img">
-        <img src="kaas.png" alt="kaas figure">
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="pub-text">
-        <b>
-          <a href="https://arxiv.org/abs/2408.07401" target="_blank">
-            DataVisT5: A Pre-trained Language Model for Jointly Understanding Text and Data Visualization
-          </a>
-        </b><br>
-        Zhuoyue Wan, Yuanfeng Song, <b>Shuaimin Li</b>, Chen Jason Zhang, Raymond Chi-Wing Wong.<br>
-        <i>ICDE 2025</i> (CCF-A)
-      </div>
-      <div class="pub-img">
-        <img src="datavist5.png" alt="datavist5 figure">
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="pub-text">
-        <b>
-          <a href="https://aclanthology.org/2025.emnlp-main.864/" target="_blank">
-            RoDEval: A Robust Word Sense Disambiguation Evaluation Framework for Large Language Models
-          </a>
-        </b><br>
-        Luyang Zhang*, <b>Shuaimin Li*</b>, Yishuo Li, Kunpeng Kang, Kaiyuan Zhang, Cong Wang, Wenpeng Lu.<br>
-        <i>EMNLP 2025</i> (CCF-B)
-      </div>
-      <div class="pub-img">
-        <img src="rodeval.png" alt="RoDEval figure">
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="pub-text">
-        <b>
-          <a href="https://ieeexplore.ieee.org/document/9401951/" target="_blank">
-            TRANSREGEX: Multi-modal Regular Expression Synthesis by Generate-and-Repair
-          </a>
-        </b><br>
-        Yeting Li, <b>Shuaimin Li</b>, Zhiwu Xu, Jialun Cao, Zixuan Chen, Yun Hu, Haiming Chen, Shing-Chi Cheung.<br>
-        <i>ICSE 2021</i> (CCF-A)
-      </div>
-      <div class="pub-img">
-        <img src="transregex.png" alt="transregex figure">
-      </div>
-    </div>
-
+<div class="pub">
+  <div class="pub-text">
+    <b>
+      <a href="https://arxiv.org/abs/2408.07401" target="_blank">
+        DataVisT5: A Pre-trained Language Model for Jointly Understanding Text and Data Visualization
+      </a>
+    </b><br>
+    Zhuoyue Wan, Yuanfeng Song, <b>Shuaimin Li</b>, et al.<br>
+    <i>ICDE 2025</i> (CCF-A)
+  </div>
+  
+  <div class="pub-img">
+    <div class="venue-badge">ICDE '25</div> 
+    <img src="datavist5.png" alt="datavist5 figure">
+  </div>
+</div>
 
 <h2>Selected Research Projects</h2>
 
