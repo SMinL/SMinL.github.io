@@ -12,15 +12,12 @@
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #222;
+    color: #444; /* 修改这里：由 #222 改为 #444 */
     background: #fff;
-
     display: flex;
     justify-content: center;
-
     max-width: 980px;
     margin: auto;
-
     padding: 40px 20px;
     font-size: 14.5px;
   }
@@ -54,15 +51,16 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   }
 
+  .sidebar p {
+    font-size: 13px;
+    color: #666; /* 修改这里：由 #555 改为 #666 */
+    margin: 6px 0;
+  }
+  
   .sidebar h1 {
     font-size: 20px;
     margin: 0 0 6px 0;
-  }
-
-  .sidebar p {
-    font-size: 13px;
-    color: #555;
-    margin: 6px 0;
+    color: #222; /* 名字比普通文字黑一点，但比 h2 浅一点 */
   }
 
   /* =========================
@@ -72,13 +70,19 @@
     flex: 1;
     min-width: 0;
   }
-
   h2 {
     font-size: 18px;
     margin-top: 28px;
     margin-bottom: 12px;
     padding-bottom: 6px;
     border-bottom: 1px solid #eee;
+    color: #000; /* 新增或修改这里：确保标题是最黑的 */
+  }
+
+    /* 统一控制全站所有加粗部分的颜色 */
+  b, .project-title {
+    color: #333; /* 这种浅黑色非常专业 */
+    font-weight: 600; 
   }
 
   /* =========================
