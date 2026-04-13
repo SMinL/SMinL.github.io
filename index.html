@@ -104,22 +104,42 @@
     font-size: 14px;
   }
 
-  /* =========================
-     Figure box (IMPORTANT)
-  ========================== */
+    /* =========================
+       Figure box (IMPORTANT)
+    ========================== */
+  /* 1. 修改容器大小：减小宽度，并让高度自适应，这样不会强制拉伸图片 */
   .pub-img {
-  width: 260px;
-  height: 150px;
-  flex-shrink: 0;
-
-  border-radius: 10px;
-  overflow: hidden;
-
-  background: #f6f6f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    width: 180px;            /* 从 260px 减小到 180px，更符合学术主页比例 */
+    flex-shrink: 0;
+    border-radius: 6px;      /* 稍微减小圆角，看起来更硬朗专业 */
+    overflow: hidden;
+    background: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;  /* 给图片加一个浅色边框，防止白底图片与背景混在一起 */
+  }
+  
+  /* 2. 重要：限制图片本身的大小，防止它超出容器 */
+  .pub-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;     /* 保持比例缩放，确保整张图都能看见，不会被裁剪 */
+    display: block;
+  }
+  
+  /* 3. 优化移动端体验：如果屏幕太窄，让图片换行到文字下方 */
+  @media (max-width: 600px) {
+    .pub {
+      flex-direction: column-reverse; /* 手机端文字在上，图片在下 */
+      align-items: flex-start;
+    }
+    .pub-img {
+      width: 100%;           /* 手机端图片撑满宽度 */
+      height: auto;
+      margin-top: 10px;
+    }
+  }
 
 
 
@@ -193,7 +213,9 @@
           <b>Shuaimin Li</b>, Xuang Chen, Yuanfeng Song, et al.<br>
           <i>The VLDB Journal</i> (CCF-A)
         </div>
-        <img src="prompt4vis.png" alt="prompt4vis figure">
+        <div class="pub-img">
+          <img src="prompt4vis.png" alt="prompt4vis figure">
+        </div>
       </div>
       
       <div class="pub">
