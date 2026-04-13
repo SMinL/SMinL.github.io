@@ -264,33 +264,113 @@
   margin-top: 4px;
   color: #666; /* 课程名称稍微淡一点 */
 }
+
+/* 名字与职位 */
+.sidebar h1 {
+  font-size: 22px;
+  color: #222; /* 姓名稍黑 */
+  margin-bottom: 4px;
+}
+
+.position {
+  font-weight: 600;
+  color: #333; /* 职位用深灰黑 */
+  margin: 0 !important;
+}
+
+.affiliation {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px !important;
+}
+
+/* 联系信息 */
+.contact-info {
+  margin: 20px 0;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.contact-info p {
+  font-size: 13.5px;
+  color: #555;
+  margin: 5px 0 !important;
+}
+
+/* 研究兴趣标签化 */
+.interests {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.interest-tag {
+  background: #f0f0f0;
+  color: #444;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+/* 链接按钮化 */
+.sidebar-links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-button {
+  font-size: 13px;
+  color: #0366d6 !important;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* 寻求合作的公告样式 */
+.status-tag {
+  margin-top: 25px;
+  padding: 10px;
+  background: #fff9e6; /* 淡黄色背景，温馨但不刺眼 */
+  border-left: 4px solid #f1c40f;
+  font-size: 13px;
+  color: #7d6608;
+  border-radius: 0 4px 4px 0;
+}
 </style>
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <img src="photo.jpg" alt="avatar">
+<div class="sidebar">
+  <img src="photo.jpg" alt="Shuaimin Li">
 
-    <h1>Shuaimin Li</h1>
+  <h1>Shuaimin Li</h1>
+  
+  <p class="position">Assistant Professor</p>
+  <p class="affiliation">SIAT, Chinese Academy of Sciences</p>
 
-    <p>Shenzhen, GuangDong, China</p>
-
-    <p>Email: sm.li2 [at] siat [dot] ac [dot] cn</p>
-
-    <p>
-      Interests: Natural Language Processing, Large Language Models, Data Mining
-    </p>
-
-    <p>
-      <a href="https://scholar.google.com/citations?user=EUrXG64AAAAJ&hl=zh-CN" target="_blank">Google Scholar</a><br>
-      <a href="https://dblp.org/pid/228/4334.html" target="_blank">DBLP</a>
-    </p>
-
-  <p class="tag">
-    Seeking research collaborations in academia and industry. 
-  </p>
+  <div class="contact-info">
+    <p>📍 Shenzhen, China</p>
+    <p>✉️ <a href="mailto:sm.li2@siat.ac.cn">sm.li2 [at] siat [dot] ac [dot] cn</a></p>
   </div>
+
+  <div class="interests">
+    <span class="interest-tag">NLP</span>
+    <span class="interest-tag">LLMs</span>
+    <span class="interest-tag">Data Mining</span>
+  </div>
+
+  <div class="sidebar-links">
+    <a href="https://scholar.google.com/citations?user=EUrXG64AAAAJ&hl=zh-CN" target="_blank" class="link-button">Google Scholar</a>
+    <a href="https://dblp.org/pid/228/4334.html" target="_blank" class="link-button">DBLP</a>
+  </div>
+
+  <div class="status-tag">
+    🚀 Seeking Collaborations
+  </div>
+</div>
 
   <div class="main">
 
