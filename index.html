@@ -108,73 +108,21 @@
      Figure box (IMPORTANT)
   ========================== */
   .pub-img {
-    width: 240px;
-    height: 140px;
+  width: 260px;
+  height: 150px;
+  flex-shrink: 0;
 
-    flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
 
-    border: 1px dashed #cfcfcf;
-    border-radius: 8px;
+  background: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    padding: 4px;
-    box-sizing: border-box;
 
-    overflow: hidden;
-    background: #fafafa;
-  }
-
-  .pub-img img {
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-  }
-
-  /* =========================
-     Hover effect (subtle pro feel)
-  ========================== */
-  .pub:hover .pub-img {
-    transform: scale(1.02);
-    transition: 0.2s ease;
-  }
-
-  .pub:hover {
-    background: #fcfcfc;
-    border-radius: 8px;
-  }
-
-  /* =========================
-     Mobile (important)
-  ========================== */
-  @media (max-width: 800px) {
-    body {
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    .sidebar {
-      width: 100%;
-      padding-right: 0;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .pub {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .pub-img {
-      width: 100%;
-      height: 180px;
-    }
-  }
 </style>
 </head>
 <body>
