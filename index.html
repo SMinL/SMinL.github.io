@@ -226,7 +226,44 @@
   margin: 2px 0;
   line-height: 1.4;
 }
+/* 通用列表清理 */
+.clean-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.clean-list li {
+  display: flex;
+  justify-content: space-between; /* 让年份对齐到右边 */
+  margin-bottom: 8px;
+  color: #444; /* 正文颜色 */
+}
+
+.clean-list li span:first-child {
+  flex: 1;
+}
+
+/* 奖项年份颜色稍微淡一点 */
+.clean-list li span:last-child {
+  color: #888;
+  font-variant-numeric: tabular-nums; /* 数字对齐更美观 */
+  margin-left: 20px;
+}
+
+/* 专业服务与教学部分的间距 */
+.service-section p, .teaching-section p {
+  margin: 4px 0;
+  color: #444;
+}
+
+/* 针对子列表的样式 */
+.teaching-section ul ul {
+  list-style-type: circle;
+  padding-left: 20px;
+  margin-top: 4px;
+  color: #666; /* 课程名称稍微淡一点 */
+}
 </style>
 </head>
 <body>
@@ -266,7 +303,7 @@
     My research primarily explores <b>Natural Language Processing</b> and <b>Data Mining</b>. 
     Currently, I am particularly interested in <b>Automated Scientific Discovery (AI for Science)</b> and <b>Multi-agent Collaboration</b>, aiming to push the boundaries of how LLMs can facilitate complex reasoning and scientific innovation.
   </p>
-   <h2>Experience</h2>
+   <h2>Education and Experience</h2>
 
   <div class="exp-item">
     <div class="exp-logo">
@@ -468,28 +505,35 @@
   </div>
 </div>
 
-  <h2>Honors and Awards</h2>
+<h2>Honors and Awards</h2>
+<div class="award-section">
+  <ul class="clean-list">
+    <li><span>Outstanding Graduate of Shandong Province</span> <span>2017</span></li>
+    <li><span>Honorable Mention, Mathematical Contest in Modeling (MCM/ICM)</span> <span>2016</span></li>
+    <li><span>First Prize, National Mathematical Modeling Contest (Shandong Division)</span> <span>2015</span></li>
+    <li><span>Merit Student, University of Chinese Academy of Sciences (UCAS)</span> <span>2018 & 2020</span></li>
+  </ul>
+</div>
 
-    <div class="pub">
-    <ul>
-      <li>Outstanding Graduate of Shandong Province, 2017</li>
-      <li>First Prize, National Mathematical Modeling Contest (Shandong Division), 2015</li>
-      <li>Honorable Mention, Mathematical Contest in Modeling (MCM/ICM), 2016</li>
-      <li>Merit Student, University of Chinese Academy of Sciences (UCAS), 2018 & 2020</li>
-    </ul>
-    </div>
+<h2>Professional Services</h2>
+<div class="service-section">
+  <p><b>Program Committee Member / Conference Reviewer:</b></p>
+  <p>ICDE, KDD, ACL, EMNLP, AAAI, etc.</p>
+  <p><b>Journal Reviewer:</b></p>
+  <p>Information Processing & Management (IP&M), etc.</p>
+</div>
 
-  <h2>Professional Services</h2>
-
-    <div class="pub">
-    Peer reviewer for top-tier conferences and journals, including ICDE, KDD, ACL, and Information Processing & Management, etc.
-    </div>
-    
-  <h2>Teaching Experience</h2>
-
-    <div class="pub">
-    Teaching Assistant for Deep Learning, Operating Systems, and Social Computing at the University of Chinese Academy of Sciences (<a href="https://english.ucas.ac.cn/" target="_blank">UCAS</a>).
-    </div>
+<h2>Teaching Experience</h2>
+<div class="teaching-section">
+  <ul class="clean-list">
+    <li>
+      <b>Teaching Assistant</b>, University of Chinese Academy of Sciences (UCAS)
+      <ul>
+        <li>Deep Learning, Operating Systems, Social Computing</li>
+      </ul>
+    </li>
+  </ul>
+</div>
 
     
 
